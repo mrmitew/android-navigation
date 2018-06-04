@@ -26,7 +26,10 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.*
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.navigation_activity.*
 
 /**
@@ -93,5 +96,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean =
-            drawer_layout?.navigateUp(findNavController(R.id.my_nav_host_fragment)) ?: false
+            with(findNavController(R.id.my_nav_host_fragment)) {
+                return drawer_layout?.navigateUp(this) ?: navigateUp()
+            }
 }
