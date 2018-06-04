@@ -28,9 +28,11 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+
         <action
             android:id="@+id/settings_action"
             app:destination="@id/settingsFragment"/>
+
         <action
             android:id="@+id/action_launcher_home_to_android"
             app:destination="@id/android"/>
@@ -47,9 +49,8 @@
 
         <action
             android:id="@+id/next_action"
-            app:destination="@+id/flow_step_two"
-            >
-        </action>
+            app:destination="@+id/flow_step_two"/>
+
         <action
             android:id="@+id/settings_action"
             app:destination="@id/settingsFragment"/>
@@ -67,8 +68,8 @@
 
         <action
             android:id="@+id/next_action"
-            app:popUpTo="@id/launcher_home">
-        </action>
+            app:popUpTo="@id/launcher_home"/>
+
         <action
             android:id="@+id/settings_action"
             app:destination="@id/settingsFragment"/>
@@ -85,6 +86,7 @@
             android:defaultValue="Android!"/>
 
         <deepLink app:uri="hello://world/{myarg}"/>
+
         <action
             android:id="@+id/settings_action"
             app:destination="@id/settingsFragment"/>
