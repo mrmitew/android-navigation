@@ -97,6 +97,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean =
             with(findNavController(R.id.my_nav_host_fragment)) {
+                // If there is no drawer that can handle the up navigation,
+                // we'll delegate it to the NavController instead
                 return drawer_layout?.navigateUp(this) ?: navigateUp()
             }
 }
