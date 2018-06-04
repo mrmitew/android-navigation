@@ -4,17 +4,14 @@
         <item
             android:id="@id/launcher_home"
             android:icon="@drawable/ic_home"
-            android:title="@string/home" />
+            android:title="@string/home"/>
         <item
             android:id="@id/android"
             android:icon="@drawable/ic_android"
-            android:title="@string/deeplink" />
+            android:title="@string/deeplink"/>
     </group>
-    <!-- TODO STEP 8 - Add a menu item for settings_fragment -->
-    <!--<item-->
-        <!--android:id="@+id/settings_fragment"-->
-        <!--android:icon="@drawable/ic_settings"-->
-        <!--android:title="@string/settings" />-->
-
-    <!-- END TODO STEP 8 -->
+    <item
+        android:id="@+id/settings_action"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings"/>
 </menu>

@@ -21,8 +21,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.os.Bundle
 import android.widget.RemoteViews
-
-
+import androidx.navigation.NavDeepLinkBuilder
 
 /**
  * App Widget that deep links you to the [DeepLinkFragment].
@@ -40,15 +39,15 @@ class DeepLinkAppWidgetProvider : AppWidgetProvider() {
 
         val args = Bundle()
         args.putString("myarg", "From Widget")
-        // TODO Step 11 - construct and set a PendingIntent using DeepLinkBuilder
-//        val pendingIntent = NavDeepLinkBuilder(context)
-//            .setGraph(R.navigation.mobile_navigation)
-//            .setDestination(R.id.android)
-//            .setArguments(args)
-//            .createPendingIntent()
-//
-//        remoteViews.setOnClickPendingIntent(R.id.deep_link, pendingIntent)
-        // TODO ENDSTEP 11
+
+        val pendingIntent = NavDeepLinkBuilder(context)
+            .setGraph(R.navigation.mobile_navigation)
+            .setDestination(R.id.android)
+            .setArguments(args)
+            .createPendingIntent()
+
+        remoteViews.setOnClickPendingIntent(R.id.deep_link, pendingIntent)
+
         appWidgetManager.updateAppWidget(appWidgetIds, remoteViews)
     }
 }
