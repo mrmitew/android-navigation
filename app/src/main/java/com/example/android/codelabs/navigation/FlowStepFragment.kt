@@ -17,6 +17,7 @@
 package com.example.android.codelabs.navigation
 
 import android.os.Bundle
+import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -48,8 +49,9 @@ class FlowStepFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<View>(R.id.next_button).setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.next_action)
-        )
+        view.findViewById<View>(R.id.next_button).createNavigateOnClickListener(R.id.next_button)
     }
+
+    private fun View.createNavigateOnClickListener(@IdRes viewId: Int) =
+            setOnClickListener(Navigation.createNavigateOnClickListener(viewId))
 }
