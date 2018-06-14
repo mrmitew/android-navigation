@@ -48,10 +48,9 @@ class FlowStepFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        view.findViewById<View>(R.id.next_button).createNavigateOnClickListener(R.id.next_button)
+        view.findViewById<View>(R.id.next_button).createNavigateOnClickListener(R.id.next_action)
     }
 
-    private fun View.createNavigateOnClickListener(@IdRes viewId: Int) =
-            setOnClickListener(Navigation.createNavigateOnClickListener(viewId))
+    private fun View.createNavigateOnClickListener(@IdRes viewOrActionId: Int) =
+            setOnClickListener(Navigation.createNavigateOnClickListener(viewOrActionId))
 }

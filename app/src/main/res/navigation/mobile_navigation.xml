@@ -85,6 +85,7 @@
             android:name="myarg"
             android:defaultValue="Android!"/>
 
+        <!--To test: adb shell am start -a android.intent.action.VIEW -d "hello://world/test" com.example.android.codelabs.navigation-->
         <deepLink app:uri="hello://world/{myarg}"/>
 
         <action
